@@ -1,0 +1,137 @@
+:root {
+  --primary-color: #00bdd6;
+  --secondary-color: #4458dc;
+  --third-color: #00334e;
+  --forth-color: #00bdd6;
+}
+
+.header_area .navbar .nav .nav-item:hover .nav-link,
+.header_area .navbar .nav .nav-item.active .nav-link {
+  color: var(--primary-color);
+}
+
+.primary-color {
+  color: var(--primary-color);
+}
+
+.link:hover {
+  filter: brightness(0.5);
+}
+
+.main-logo {
+  width: 300px;
+}
+
+.home_banner_area {
+  background: none;
+}
+
+.home_banner_area .banner_inner .banner_content h3:after {
+  width: 400px;
+  left: 10%;
+  background: #000;
+}
+
+.primary_btn.tr-bg {
+  color: var(--secondary-color);
+}
+
+.feature_inner {
+  padding: 2em 0;
+}
+
+.features_area {
+  padding: 0;
+}
+
+.feature_item h4 {
+  color: var(--forth-color);
+}
+
+.main_title {
+  margin: 0;
+}
+
+.portfolio_area {
+  padding: 2em 0;
+}
+
+.about_area {
+  padding: 2em 0;
+  margin: 0;
+}
+
+.testimonial_area {
+  padding: 2em 0;
+}
+
+.footer_area {
+  padding: 2em 0;
+}
+
+.home_banner_area .banner_inner .home_right_img {
+  padding-top: 2em;
+}
+
+div.home_right_img img {
+  width: 100%;
+  display: block;
+}
+
+.home_banner_area .banner_inner .banner_content h1 {
+  line-height: 1em;
+}
+
+.subscription_box .subscription textarea {
+  min-width: 380px;
+  max-width: 380px;
+  line-height: 1em;
+  padding: 1em;
+  border: 1px solid #ffffff;
+  background: transparent;
+  font-weight: 400;
+  border-radius: 5px;
+  color: #ffffff;
+  margin: 2em auto;
+  display: block;
+}
+
+textarea::-webkit-input-placeholder {
+  color: #fff !important;
+}
+
+textarea:-moz-placeholder {
+  /* Firefox 18- */
+  color: #fff !important;
+}
+
+textarea::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #fff !important;
+}
+
+textarea:-ms-input-placeholder {
+  color: #fff !important;
+}
+
+textarea::placeholder {
+  color: #fff !important;
+}
+
+.feature_item {
+  cursor: unset;
+}
+
+.testimonial_area .owl-carousel .owl-item img {
+  width: 100% !important;
+}
+
+.footer_area:before {
+  background: none !important;
+}
+
+@media (max-width: 991px) {
+  .header_area .navbar {
+    background: #fff;
+  }
+}
