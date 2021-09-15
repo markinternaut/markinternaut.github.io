@@ -122,12 +122,12 @@ textarea::placeholder {
   cursor: unset;
 }
 
-.testimonial_area .owl-carousel .owl-item img {
-  width: 100% !important;
+.testi_item {
+  padding: 1em;
 }
 
-.footer_area:before {
-  background: none !important;
+.testimonial_area .owl-carousel .owl-item img {
+  width: 100% !important;
 }
 
 @media (max-width: 991px) {
