@@ -130,6 +130,10 @@ textarea::placeholder {
   width: 100% !important;
 }
 
+.main_title h2 {
+  padding-bottom: 1em;
+}
+
 @media (max-width: 991px) {
   .header_area .navbar {
     background: #fff;
