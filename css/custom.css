@@ -131,7 +131,7 @@ textarea::placeholder {
 }
 
 .main_title h2 {
-  padding-bottom: 1em;
+  margin-bottom: 1.7em !important;
 }
 
 @media (max-width: 991px) {
