@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Dashes To Spaces + Lower Case String</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        
+        /* #dirtystring {
+            padding: 1em;
+            margin: 0 auto;
+            display: block;
+            width: 80%;            
+        } */
+
+        h3 {
+            padding: 1em;
+            text-align: center;    
+            margin-top: 6em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <h3 class="text-center">
+                        Stringify
+                    </h3>                    
+                    <input class="form-control" type="text" id="dirtystring" placeholder="Enter String"/>
+                    <br>
+                    <br>
+                    <label for="noDashesLowercase">Lower Case | No Dashes</label>
+                    <input class="form-control" type="text" id="noDashesLowercase" />                    
+                    <br>                    
+                    <button id="btnLowercaseNoDashes" class="form-control btn btn-primary" onclick="copyClipboard1()">Copy Text</button>
+                    <br>
+                    <br>
+                    <label for="hasDashesLowercase">Lower Case | With Dashes</label>                    
+                    <input class="form-control" type="text" id="hasDashesLowercase" />        
+                    <br>
+                    <button id="btnLowercaseWithDashes" class="form-control btn btn-primary" onclick="copyClipboard2()">Copy Text</button>
+                    <br>
+                    <br> 
+                    <label for="hasDashesLowercase">Title Case</label>                    
+                    <input class="form-control" type="text" id="noDashesUppercase" />                 
+                    <br>
+                    <button id="btnTitleCase" class="form-control btn btn-primary" onclick="copyClipboard3()">Copy Text</button>
+                </div> 
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+
+    <script>
+
+        var dirtyString = document.getElementById('dirtystring');
+        var noDashesLowercase = document.getElementById('noDashesLowercase');        
+        var hasDashesLowercase = document.getElementById('hasDashesLowercase');
+        var noDashesUppercase = document.getElementById('noDashesUppercase');
+        var btnLowercaseNoDashes = document.getElementById('btnLowercaseNoDashes');
+        var btnLowercaseWithDashes = document.getElementById('btnLowercaseWithDashes');
+        var btnTitleCase = document.getElementById('btnTitleCase');
+        
+
+        dirtyString.oninput = handleInput;
+
+        String.prototype.toProperCase = function () {
+            return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+        };        
+
+        function handleInput(e) {
+            
+            var cleanString = e.target.value;
+            noDashesLowercase.value = cleanString.replace(/-/g, ' ').toLowerCase();
+            hasDashesLowercase.value = cleanString.replace(/ /g, '-').toLowerCase();
+            noDashesUppercase.value = cleanString.replace(/-/g, ' ').toProperCase();            
+            
+        }
+
+        function copyClipboard1() {            
+
+            noDashesLowercase.select();
+            noDashesLowercase.setSelectionRange(0, 99999);
+
+            navigator.clipboard.writeText(noDashesLowercase.value);
+
+            btnLowercaseNoDashes.innerHTML = "Text Copied";
+
+            btnLowercaseNoDashes.classList.add("btn-success");
+            btnLowercaseNoDashes.classList.remove("btn-primary");
+
+            setTimeout(function(){ 
+
+                btnLowercaseNoDashes.innerHTML = "Copy Text";
+                btnLowercaseNoDashes.classList.add("btn-primary");
+                btnLowercaseNoDashes.classList.remove("btn-success");
+                
+            }, 500);
+
+        }
+
+        function copyClipboard2() {            
+
+            hasDashesLowercase.select();
+            hasDashesLowercase.setSelectionRange(0, 99999);
+
+            navigator.clipboard.writeText(hasDashesLowercase.value);
+
+            btnLowercaseWithDashes.innerHTML = "Text Copied";
+
+            btnLowercaseWithDashes.classList.add("btn-success");
+            btnLowercaseWithDashes.classList.remove("btn-primary");
+
+            setTimeout(function(){ 
+
+                btnLowercaseWithDashes.innerHTML = "Copy Text";
+                btnLowercaseWithDashes.classList.add("btn-primary");
+                btnLowercaseWithDashes.classList.remove("btn-success");
+                
+            }, 500);
+
+        }
+
+        function copyClipboard3() {            
+
+            noDashesUppercase.select();
+            noDashesUppercase.setSelectionRange(0, 99999);
+
+            navigator.clipboard.writeText(noDashesUppercase.value);
+
+            btnTitleCase.innerHTML = "Text Copied";
+
+            btnTitleCase.classList.add("btn-success");
+            btnTitleCase.classList.remove("btn-primary");
+
+            setTimeout(function(){ 
+
+                btnTitleCase.innerHTML = "Copy Text";
+                btnTitleCase.classList.add("btn-primary");
+                btnTitleCase.classList.remove("btn-success");
+                
+            }, 500);
+
+        }
+
+        
+            
+    </script>
+
+</body>
+</html>
