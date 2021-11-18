@@ -21,6 +21,26 @@
             margin-top: 1em;
         }
 
+        body {
+            background: #121212;
+            color: #fff;
+        }
+
+        .container {
+            padding: 1em 0 5em;
+        }
+
+        .form-control:not(.btn-primary, .btn-success) {
+            border: none;
+            background: #1d1d1d;
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: #003c95;
+            border: none;
+        }
+
     </style>
 </head>
 <body>
@@ -76,9 +96,9 @@
         function handleInput(e) {
             
             var cleanString = e.target.value;
-            noDashesLowercase.value = cleanString.replace(/-/g, ' ').toLowerCase();
-            hasDashesLowercase.value = cleanString.replace(/ /g, '-').toLowerCase();
-            noDashesUppercase.value = cleanString.replace(/-/g, ' ').toProperCase();            
+            noDashesLowercase.value = cleanString.replace(/-/g, ' ').replace(/[^a-zA-Z ]/g, '').toLowerCase();
+            hasDashesLowercase.value = cleanString.replace(/ /g, '-').replace(/[^a-zA-Z\- ]/g, '').toLowerCase();
+            noDashesUppercase.value = cleanString.replace(/-/g, ' ').replace(/[^a-zA-Z ]/g, '').toProperCase();
             
         }
 
