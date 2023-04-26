@@ -129,6 +129,12 @@ header {
             border-radius: 5px 5px 0 0;
           }
         }
+        @media screen and (max-width: 999px) {
+          grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (max-width: 740px) {
+          grid-template-columns: 1fr;
+        }
       }
     }
     .pages {
